@@ -16,9 +16,9 @@ const Products = () => {
   return (
     <ProductsWrapper>
       <div className="row">
-        {dataProducts.map((item, i) => {
+        {product.map((item, i) => {
           return (
-            <div className="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+            <div key={item.id} className="col-lg-3 col-md-4 col-sm-6 col-xs-12">
               <div className="p-4">
                 <div className="imgProduct">
                   <div className="filter">
@@ -41,12 +41,11 @@ const Products = () => {
                     <button
                       className="deleteBtn"
                       onClick={() => {
-                        console.log(i);
+                        console.log(typeof item.id);
                         // navigate(0);
                         setProduct((prev) => {
-                          prev.splice(i, 1);
+                          return prev.filter((el) => el.id != item.id);
                         });
-                        console.log(dataProducts);
                       }}
                     >
                       <DeleteIcon />
