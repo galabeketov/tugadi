@@ -25,7 +25,17 @@ const Products = () => {
                     <img src={item.url} alt="product" />
                   </div>
                   <div className="btns">
-                    <button className="editBtn">
+                    <button
+                      className="editBtn"
+                      onClick={() => {
+                        console.log(i);
+                        navigate(1);
+                        setProduct((prev) => {
+                          prev.push(i, 1);
+                        });
+                        console.log(dataProducts);
+                      }}
+                    >
                       <ModeEditOutlineIcon />
                     </button>
                     <button
@@ -34,7 +44,7 @@ const Products = () => {
                         console.log(i);
                         // navigate(0);
                         setProduct((prev) => {
-                          prev.splice(i, i + 1);
+                          prev.splice(i, 1);
                         });
                         console.log(dataProducts);
                       }}
