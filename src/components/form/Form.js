@@ -9,6 +9,7 @@ import { useNavigate } from "react-router-dom";
 
 export default function Form() {
   let a = dataProducts.length + 1;
+  a.toString();
   const navigate = useNavigate();
   const {
     register,
